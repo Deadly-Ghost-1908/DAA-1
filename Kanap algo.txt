@@ -1,0 +1,43 @@
+Start
+
+Input:
+
+Number of items n
+
+Weight array wt[1...n]
+
+Value array val[1...n]
+
+Knapsack capacity W
+Create a DP table
+
+Define a 2D table dp[n+1][W+1]
+
+dp[i][w] represents the maximum value using first i items with capacity w
+
+Initialization
+
+Set dp[0][w] = 0 for all w (no items → no value)
+
+Set dp[i][0] = 0 for all i (zero capacity → no value)
+
+Fill the DP table
+
+For each item i from 1 to n:
+
+For each capacity w from 1 to W:
+
+If wt[i] ≤ w:
+
+dp[i][w] = max(dp[i-1][w], val[i] + dp[i-1][w - wt[i]])
+
+Else:
+
+dp[i][w] = dp[i-1][w]
+
+Result
+
+The maximum achievable value is stored in dp[n][W]
+
+Stop
+
