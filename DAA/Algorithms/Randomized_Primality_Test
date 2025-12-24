@@ -1,0 +1,14 @@
+import random
+def is_probable_prime(n, k=5):
+    if n <= 3:
+        return n > 1
+    for _ in range(k):
+        a = random.randint(2, n-2)
+        if pow(a, n-1, n) != 1:
+            return False
+    return True
+print("Is 97 prime?", is_probable_prime(97))
+
+
+
+
